@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  wait_time: 1
+  user: 
+  place: 
+
+two:
+  wait_time: 1
+  user: 
+  place: 

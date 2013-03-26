@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  average_time: 1
+  day: 1
+  dow: MyString
+  hour: 1
+  minute: 1
+  month: 1
+  place: 
+  year: 1
+
+two:
+  average_time: 1
+  day: 1
+  dow: MyString
+  hour: 1
+  minute: 1
+  month: 1
+  place: 
+  year: 1
