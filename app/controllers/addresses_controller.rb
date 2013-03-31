@@ -19,21 +19,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  # GET /addresses/new
-  # GET /addresses/new.json
-  def new
-    @address = Address.new
-
-    respond_to do |format|
-      format.json { render json: @address }
-    end
-  end
-
-  # GET /addresses/1/edit
-  def edit
-    @address = Address.find(params[:id])
-  end
-
   # POST /addresses
   # POST /addresses.json
   def create
@@ -41,7 +26,7 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        format.json { render json: @address, status: :created, location: @address }
+        format.json { render :json => @address  }
       else
         format.json { render json: @address.errors, status: :unprocessable_entity }
       end

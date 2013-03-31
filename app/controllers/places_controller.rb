@@ -19,21 +19,6 @@ class PlacesController < ApplicationController
     end
   end
 
-  # GET /places/new
-  # GET /places/new.json
-  def new
-    @place = Place.new
-
-    respond_to do |format|
-      format.json { render json: @place }
-    end
-  end
-
-  # GET /places/1/edit
-  def edit
-    @place = Place.find(params[:id])
-  end
-
   # POST /places
   # POST /places.json
   def create
@@ -41,7 +26,7 @@ class PlacesController < ApplicationController
 
     respond_to do |format|
       if @place.save
-        format.json { render json: @place, status: :created, location: @place }
+        format.json { render :json => @place}
       else
         format.json { render json: @place.errors, status: :unprocessable_entity }
       end
@@ -71,5 +56,16 @@ class PlacesController < ApplicationController
     respond_to do |format|
       format.json { head :no_content }
     end
+  end
+
+  # GET /places/search
+  # GET /places/search.json
+  def search
+    @query = params[:query]
+    search = Place.search do
+      fulltext params[:query]
+    end
+    @places = search.results
+    render :json => @places
   end
 end

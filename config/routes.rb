@@ -11,10 +11,19 @@ WaitnewsBackend::Application.routes.draw do
   resources :waits
 
 
-  resources :addresses
+  get "/addresses" => "addresses#index"
+  get "/addresses/:id" => "addresses#show"
+  post "/addresses" => "addresses#create"
+  put "/addresses/:id" => "addresses#update"
+  delete "/addresses/:id" => "addresses#destroy"
 
 
-  resources :places
+  get "/places" => "places#index"
+  get "/places/search" => "places#search"
+  get "/places/:id" => "places#show"
+  post "/places" => "places#create"
+  put "/places/:id" => "places#update"
+  delete "/places/:id" => "places#destroy"
 
 
   # The priority is based upon order of creation:
