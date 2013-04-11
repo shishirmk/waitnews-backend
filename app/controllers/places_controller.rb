@@ -66,6 +66,6 @@ class PlacesController < ApplicationController
       fulltext params[:query]
     end
     @places = search.results
-    render :json => @places
+    render :json => @places.to_json(:include => :address)
   end
 end
