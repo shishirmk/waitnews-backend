@@ -5,8 +5,14 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+  gem 'sunspot_solr'
+end
 
+group :production do
+  gem 'pg'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,8 +27,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+gem 'sunspot_rails', '~> 1.3.0'
 gem 'progress_bar'
 
 # To use ActiveModel has_secure_password
