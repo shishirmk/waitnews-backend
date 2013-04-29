@@ -65,7 +65,14 @@ class PlacesController < ApplicationController
     search = Place.search do
       fulltext params[:query]
     end
-    @places = search.results
-    render :json => @places.to_json(:include => :address)
+    placesArray = search.results
+    place_ids = Array.new
+    placesArray.each do |place|
+      place_ids <<  place.id
+    end
+    @places = Place.where(:id => place_ids)#.includes(:address)
+
+    #@aw =  Averagewait.find_all_by_place_id(place_ids)
+    render :json => @places#.to_json(:include => :address)
   end
 end
