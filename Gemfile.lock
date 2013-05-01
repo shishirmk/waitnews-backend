@@ -57,6 +57,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.2)
+    newrelic_rpm (3.6.1.88)
     nokogiri (1.5.9)
     options (2.3.0)
       fattr
@@ -128,6 +129,7 @@ DEPENDENCIES
   active_model_serializers
   coffee-rails (~> 3.2.1)
   jquery-rails
+  newrelic_rpm
   pg
   progress_bar
   rails (= 3.2.12)

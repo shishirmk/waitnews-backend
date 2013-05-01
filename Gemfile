@@ -30,6 +30,7 @@ gem 'jquery-rails'
 gem 'sunspot_rails', '~> 1.3.0'
 gem 'progress_bar'
 gem 'active_model_serializers'
+gem 'newrelic_rpm'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
